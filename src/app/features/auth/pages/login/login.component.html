@@ -26,6 +26,7 @@
                     <button
                         (click)="onSubmit()"
                         type="button"
+                        [disabled]="form.invalid"
                         class="inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-white border border-transparent rounded-lg bg-elephant-900 gap-x-2 hover:bg-elephant-800 disabled:opacity-50 disabled:pointer-events-none">
                         Sign in
                     </button>
