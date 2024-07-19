@@ -41,7 +41,6 @@ export class EmployeeFormComponent implements OnInit {
   form!: FormGroup;
   routeId!: number;
   label!: string;
-  employee!: EmployeeEntity;
 
   group = [
     { id: 1, name: 'IT' },
@@ -85,7 +84,6 @@ export class EmployeeFormComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (data) => {
-          this.employee = data;
           this.prepopulateForm(data);
         },
         error: (error: HttpErrorResponse) => {
