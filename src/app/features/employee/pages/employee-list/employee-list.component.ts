@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, DestroyRef, ViewChild, type OnInit } from '@angular/core';
+import { Component, DestroyRef, HostListener, ViewChild, type OnInit } from '@angular/core';
 import { EmployeeService } from '../../../../core/services/employee.service';
 import { EmployeeEntity } from '../../../../core/domain/entities/employee-entity';
 import { Table, TableModule } from 'primeng/table';
@@ -35,7 +35,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class EmployeeListComponent implements OnInit {
     @ViewChild('dt') dt!: Table;
-
+    isVisible: boolean = false;
     employees: EmployeeEntity[] = [];
 
     columns = [
@@ -55,6 +55,7 @@ export class EmployeeListComponent implements OnInit {
 
     ngOnInit(): void {
         this.getEmployees();
+      window.addEventListener('scroll', this.onWindowScroll);
     }
 
     getEmployees(): void {
@@ -106,4 +107,22 @@ export class EmployeeListComponent implements OnInit {
         const value = target.value;
         table.filterGlobal(value, 'contains');
     }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      left: 270,
+      behavior: 'smooth',
+    });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 20) {
+      this.isVisible = true;
+    } else if (scrolled <= 300) {
+      this.isVisible = false;
+    }
+  }
 }

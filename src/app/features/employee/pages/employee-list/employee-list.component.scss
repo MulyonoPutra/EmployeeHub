@@ -40,3 +40,19 @@
 input {
     @apply block w-full rounded-lg border border-gray-300 bg-white p-4 ps-10 text-sm font-medium text-gray-900 focus:border-elephant-500 focus:ring-elephant-500 dark:border-elephant-400 dark:bg-elephant-400 dark:text-white dark:placeholder-elephant-400 dark:focus:border-elephant-500 dark:focus:ring-elephant-500;
 }
+
+#scroll {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+

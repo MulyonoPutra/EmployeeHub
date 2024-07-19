@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, type OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,6 +9,6 @@ import { RouterModule } from '@angular/router';
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
-    ngOnInit(): void {}
+export class FooterComponent {
+
 }
