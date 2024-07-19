@@ -8,7 +8,7 @@ import {
     FormBuilder,
     Validators,
 } from '@angular/forms';
-import { RouterModule, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { timer, take } from 'rxjs';
 import { PasswordFieldComponent } from '../../../../shared/components/password-field/password-field.component';
 

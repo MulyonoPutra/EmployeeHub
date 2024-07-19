@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Input, type OnInit } from '@angular/core';
+import { Component, Input, type OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-loading-indicator',

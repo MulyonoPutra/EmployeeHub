@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,6 @@ import { ValidationService } from '../../services/validation.service';
     templateUrl: './number-field.component.html',
     styleUrls: ['./number-field.component.scss'],
     providers: [ValidationService],
-    // encapsulation: ViewEncapsulation.None
 })
 export class NumberFieldComponent {
     @Input() label!: string;

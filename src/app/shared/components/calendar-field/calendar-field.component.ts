@@ -53,7 +53,7 @@ export class CalendarFieldComponent {
 
     isNextDay(date: Date): boolean {
         const nextDay = new Date();
-        nextDay.setDate(nextDay.getDate() + 1); // Get next day
+        nextDay.setDate(nextDay.getDate() + 1);
         return (
             date.getDate() === nextDay.getDate() &&
             date.getMonth() === nextDay.getMonth() &&

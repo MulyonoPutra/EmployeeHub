@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, type OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import { Component } from '@angular/core';
 import { MenuModule } from 'primeng/menu';
+import { RouterModule } from '@angular/router';
 @Component({
     selector: 'app-navbar',
     standalone: true,
@@ -10,13 +9,4 @@ import { MenuModule } from 'primeng/menu';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
-    items: MenuItem[] | undefined;
-
-    ngOnInit() {
-        this.items = [
-            { label: 'New', icon: 'pi pi-plus' },
-            { label: 'Search', icon: 'pi pi-search' },
-        ];
-    }
-}
+export class NavbarComponent {}
