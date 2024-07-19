@@ -11,6 +11,7 @@ import {
 import { Router } from '@angular/router';
 import { timer, take } from 'rxjs';
 import { PasswordFieldComponent } from '../../../../shared/components/password-field/password-field.component';
+import { StorageService } from '../../../../shared/services/storage.service';
 
 @Component({
     selector: 'app-login',
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private readonly formBuilder: FormBuilder,
         private readonly router: Router,
+        private readonly storageService: StorageService
     ) {}
 
     ngOnInit(): void {
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit(): void {
         if (this.form.valid) {
-            console.log(this.formCtrlValue);
+          this.storageService.setCredentials(this.formCtrlValue.email)
             this.router.navigateByUrl('/');
         }
     }

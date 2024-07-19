@@ -1,5 +1,6 @@
+import { Component, Input } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import { Component, Input, type OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-loading-indicator',
@@ -8,8 +9,6 @@ import { Component, Input, type OnInit } from '@angular/core';
     templateUrl: './loading-indicator.component.html',
     styleUrls: ['./loading-indicator.component.scss'],
 })
-export class LoadingIndicatorComponent implements OnInit {
+export class LoadingIndicatorComponent {
     @Input() loadingIndicator!: boolean;
-
-    ngOnInit(): void {}
 }
