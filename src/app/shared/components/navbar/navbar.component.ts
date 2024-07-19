@@ -14,13 +14,13 @@ import { StorageService } from '../../services/storage.service';
     styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  storageService: StorageService = inject(StorageService);
-  router: Router = inject(Router);
+    storageService: StorageService = inject(StorageService);
+    router: Router = inject(Router);
 
-  logout(): void {
-    this.storageService.clear();
-    timer(2000)
-      .pipe(take(1))
-      .subscribe(() => this.router.navigateByUrl('auth/login'));
-  }
+    logout(): void {
+        this.storageService.clear();
+        timer(2000)
+            .pipe(take(1))
+            .subscribe(() => this.router.navigateByUrl('auth/login'));
+    }
 }

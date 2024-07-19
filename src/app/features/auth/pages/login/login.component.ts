@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private readonly formBuilder: FormBuilder,
         private readonly router: Router,
-        private readonly storageService: StorageService
+        private readonly storageService: StorageService,
     ) {}
 
     ngOnInit(): void {
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit(): void {
         if (this.form.valid) {
-          this.storageService.setCredentials(this.formCtrlValue.email)
+            this.storageService.setCredentials(this.formCtrlValue.email);
             this.router.navigateByUrl('/');
         }
     }

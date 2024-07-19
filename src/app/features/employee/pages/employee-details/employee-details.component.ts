@@ -37,17 +37,18 @@ export class EmployeeDetailsComponent implements OnInit {
     }
 
     findEmployeeById(): void {
-        this.employeeService.getEmployeeById(this.routeId)
-          .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe({
-            next: (data) => {
-                this.employee = data;
-            },
-          error: (error: HttpErrorResponse) => {
-            this.toastService.showErrorToast('Error', error.message);
-          },
-          complete: () => { },
-        });
+        this.employeeService
+            .getEmployeeById(this.routeId)
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe({
+                next: (data) => {
+                    this.employee = data;
+                },
+                error: (error: HttpErrorResponse) => {
+                    this.toastService.showErrorToast('Error', error.message);
+                },
+                complete: () => {},
+            });
     }
 
     goBack(): void {

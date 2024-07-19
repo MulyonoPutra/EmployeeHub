@@ -13,7 +13,7 @@ export const routes: Routes = [
                 path: 'employee',
                 loadChildren: () =>
                     import('./features/employee/employee.routes').then((c) => c.EmployeeRoutes),
-              canActivate: [authGuard]
+                canActivate: [authGuard],
             },
         ],
     },
