@@ -55,7 +55,7 @@ export class EmployeeListComponent implements OnInit {
 
     ngOnInit(): void {
         this.getEmployees();
-      window.addEventListener('scroll', this.onWindowScroll);
+        window.addEventListener('scroll', this.onWindowScroll);
     }
 
     getEmployees(): void {
@@ -108,21 +108,21 @@ export class EmployeeListComponent implements OnInit {
         table.filterGlobal(value, 'contains');
     }
 
-  scrollToTop(): void {
-    window.scrollTo({
-      top: 0,
-      left: 270,
-      behavior: 'smooth',
-    });
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 20) {
-      this.isVisible = true;
-    } else if (scrolled <= 300) {
-      this.isVisible = false;
+    scrollToTop(): void {
+        window.scrollTo({
+            top: 0,
+            left: 270,
+            behavior: 'smooth',
+        });
     }
-  }
+
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        const scrolled = document.documentElement.scrollTop;
+        if (scrolled > 20) {
+            this.isVisible = true;
+        } else if (scrolled <= 300) {
+            this.isVisible = false;
+        }
+    }
 }
