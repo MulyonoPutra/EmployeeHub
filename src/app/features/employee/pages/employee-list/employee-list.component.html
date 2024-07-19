@@ -1,0 +1,108 @@
+<div class="flex flex-col p-4 bg-white border shadow-sm rounded-xl md:p-5">
+    <p-table
+        #dt
+        [value]="employees"
+        [paginator]="true"
+        [rows]="5"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        [rowsPerPageOptions]="[5, 10, 20]"
+        [globalFilterFields]="['username', 'email', 'status']">
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <p-iconField iconPosition="left" class="ml-2">
+                    <p-inputIcon>
+                        <i class="pi pi-search"></i>
+                    </p-inputIcon>
+                    <input
+                        pInputText
+                        type="text"
+                        (input)="filter(dt, $event)"
+                        placeholder="Search keyword" />
+                </p-iconField>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+            <tr>
+                @for (item of columns; track $index) {
+                    <th pSortableColumn="email">
+                        <div class="flex space-x-1">
+                            <span>{{ item.header }} </span>
+                            <p-sortIcon field="{{ item.field }}" />
+                        </div>
+                    </th>
+                }
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-employee>
+            <tr class="text-sm text-elephant">
+                <td>{{ employee.username }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.birthDate | date: 'longDate' }}</td>
+                <td>
+                    <i
+                        class="pi"
+                        [ngClass]="{
+                            'text-green-500 pi-check-circle': employee.status === 'Active',
+                            'text-red-500 pi-times-circle': employee.status === 'Inactive',
+                        }"></i>
+                </td>
+                <td>
+                    <div class="flex space-x-0">
+                        <div>
+                            <button
+                                (click)="onView(employee.id)"
+                                [pTooltip]="viewTooltip"
+                                severity="secondary"
+                                tooltipPosition="bottom"
+                                pButton
+                                pRipple
+                                type="button"
+                                class="p-1 m-1 text-blue-500 cursor-pointer pi pi-eye"></button>
+                        </div>
+                        <ng-template #viewTooltip>
+                            <div class="flex align-items-center">
+                                <span> View </span>
+                            </div>
+                        </ng-template>
+                        <div>
+                            <button
+                                (click)="onUpdate(employee.id)"
+                                [pTooltip]="editTooltip"
+                                severity="secondary"
+                                tooltipPosition="bottom"
+                                pButton
+                                pRipple
+                                type="button"
+                                class="p-1 m-1 text-yellow-500 cursor-pointer pi pi-pencil"></button>
+                        </div>
+                        <ng-template #editTooltip>
+                            <div class="flex align-items-center">
+                                <span> Edit </span>
+                            </div>
+                        </ng-template>
+                        <div>
+                            <button
+                                (click)="onRemove(employee.id)"
+                                [pTooltip]="deleteTooltip"
+                                severity="secondary"
+                                tooltipPosition="bottom"
+                                pButton
+                                pRipple
+                                type="button"
+                                class="p-1 m-1 text-red-500 cursor-pointer pi pi-trash"></button>
+                        </div>
+                        <ng-template #deleteTooltip>
+                            <div class="flex align-items-center">
+                                <span> Delete </span>
+                            </div>
+                        </ng-template>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft" class="mt-4">
+            <p-button type="button" icon="pi pi-plus" (click)="onCreate()"></p-button>
+        </ng-template>
+    </p-table>
+</div>

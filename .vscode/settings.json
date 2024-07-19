@@ -1,0 +1,9 @@
+{
+    "editor.fontFamily": "'IBM Plex Mono', 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontVariations": true,
+    "editor.fontSize": 12,
+    "editor.fontWeight": "800",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}

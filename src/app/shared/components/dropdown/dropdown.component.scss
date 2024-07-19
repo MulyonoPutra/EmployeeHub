@@ -1,0 +1,52 @@
+:host {
+    display: block;
+}
+
+.errors {
+    &-message {
+        @apply blink absolute left-0 text-xs font-semibold text-red-700;
+    }
+}
+
+.label-valid {
+    @apply flex justify-center text-start text-xs font-medium text-elephant-950;
+}
+
+.label-invalid {
+    @apply flex justify-center text-start text-xs font-medium text-red-700;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+:host ::ng-deep .p-dropdown {
+    width: 100% !important;
+    @apply rounded-lg border-elephant-200;
+    border: 1px solid #c5e3f2;
+}
+
+:host ::ng-deep .p-dropdown-label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+:host ::ng-deep p-dropdown.ng-invalid:not(form) > div {
+    border: 1px solid #c5e3f2;
+}
+
+:host ::ng-deep p-dropdown.ng-invalid.ng-touched.ui-inputwrapper-focus:not(form) > div {
+    border: 1px solid #c5e3f2;
+    border-radius: 2px;
+}
+
+:host ::ng-deep p-dropdown.ng-invalid.ng-untouched.ui-inputwrapper-focus:not(form) > div {
+    border: 1px solid #ea1111;
+    border-radius: 2px;
+}

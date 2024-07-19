@@ -1,0 +1,15 @@
+:host {
+    display: block;
+}
+
+.save {
+    @apply inline-flex items-center px-4 py-3 text-sm font-semibold text-white bg-gray-800 border border-transparent rounded-lg gap-x-2 hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none;
+
+    &:disabled {
+        @apply cursor-not-allowed;
+    }
+}
+
+.cancel {
+    @apply inline-flex items-center px-4 py-3 text-sm font-semibold text-gray-800 border border-gray-800 rounded-lg gap-x-2 hover:border-gray-500 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none;
+}

@@ -1,0 +1,17 @@
+<div class="relative py-4" [formGroup]="formGroup">
+    <p-floatLabel>
+        <p-calendar
+            class="custom-calendar"
+            [showIcon]="true"
+            [showOnFocus]="false"
+            inputId="buttondisplay"
+            [style]="{ width: '100%' }"
+            [maxDate]="tomorrow"
+            [formControlName]="fieldName"
+            inputId="calendar" />
+        <label for="calendar" [ngClass]="classLabel">{{ label }}</label>
+    </p-floatLabel>
+    @if (isInvalid) {
+        <div class="errors-message">{{ errorMessage }}</div>
+    }
+</div>

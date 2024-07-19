@@ -1,0 +1,42 @@
+:host {
+    display: block;
+}
+
+::ng-deep {
+    .p-datatable .p-datatable-header {
+        @apply rounded-t-lg bg-white dark:bg-elephant-700;
+        color: #374151;
+        border: 0.5px solid #42424201;
+        border-width: 1px 0 1px 0;
+        padding: 1rem 1rem;
+        font-weight: 700;
+    }
+
+    .p-datatable .p-paginator-bottom {
+        @apply rounded-b-lg rounded-t-lg bg-white dark:bg-elephant-700;
+    }
+
+    .p-dropdown {
+        @apply rounded-t-lg border bg-white dark:bg-elephant-700;
+    }
+
+    .p-datatable .p-datatable-tbody > tr {
+        @apply rounded-b-lg rounded-t-lg bg-white dark:bg-elephant-700 dark:text-gray-200;
+    }
+
+    .p-datatable .p-datatable-thead > tr > th {
+        @apply bg-white dark:bg-elephant-700 dark:text-gray-200;
+    }
+
+    .p-datatable.p-datatable-striped.p-datatable-tbody > tr:nth-child(even) {
+        @apply bg-gray-200 dark:bg-elephant-500 dark:text-gray-200;
+    }
+
+    .p-datatable .p-paginator-bottom {
+        margin-top: 12px;
+    }
+}
+
+input {
+    @apply block w-full rounded-lg border border-gray-300 bg-white p-4 ps-10 text-sm font-medium text-gray-900 focus:border-elephant-500 focus:ring-elephant-500 dark:border-elephant-400 dark:bg-elephant-400 dark:text-white dark:placeholder-elephant-400 dark:focus:border-elephant-500 dark:focus:ring-elephant-500;
+}

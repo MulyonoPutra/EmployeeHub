@@ -1,0 +1,12 @@
+<app-navbar />
+<main>
+    <div
+        [ngClass]="{
+            'max-w-[55rem]': !isFullWidthRoute,
+            'max-w-[85rem]': isFullWidthRoute,
+        }"
+        class="px-4 pt-1 pb-10 mx-auto sm:px-6 lg:px-8">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+<app-footer />

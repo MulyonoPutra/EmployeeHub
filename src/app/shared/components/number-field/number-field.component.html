@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup" class="relative w-full py-4">
+    <div class="p-float-label">
+        <p-inputNumber
+            inputId="integeronly"
+            [ngClass]="classFilled"
+            [formControlName]="fieldName" />
+        <label [for]="fieldName" [ngClass]="classLabel">{{ label }}</label>
+    </div>
+    <span class="flex justify-start text-xs font-medium text-start text-elephant-950"
+        >Only input number allowed</span
+    >
+    @if (isInvalid) {
+        <div class="errors-message">{{ errorMessage }}</div>
+    }
+</div>
