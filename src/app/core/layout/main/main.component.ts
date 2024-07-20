@@ -11,15 +11,13 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
     private currentRoute!: string;
     private fullWidthRoutes: string[] = ['/employee'];
 
     constructor(private readonly router: Router) {
         this.trackRouteChanges();
     }
-
-    ngOnInit(): void {}
 
     trackRouteChanges(): void {
         this.router.events.subscribe((event) => {
